@@ -1,0 +1,16 @@
+name: CI
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Install Haxe
+      uses: krdlab/setup-haxe@v1
+      with:
+        haxe-version: latest
+    - name: Install dependencies
+      run: haxelib install all
+    - name: Build
+      run: haxe build.hxml

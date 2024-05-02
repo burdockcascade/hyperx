@@ -1,0 +1,3 @@
+-p src
+-main Example
+-hl target/example.hl
